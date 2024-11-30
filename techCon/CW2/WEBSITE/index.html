@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- makes the website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Con</title>
+    <!-- External CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+</head>
+
+<section class="header">
+    <nav>
+        <a href="index.html"><img class="logoimg" src="logo.png" alt="Tech Con Logo"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="register.html">REGISTRATION</a></li>
+                <li><a href="schedule.html">SCHEDULE</a></li>
+                <li><a href="speaker.html">SPEAKER</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <div class="text-box">
+        <h1>TECHCON 2023</h1>
+        <p>Welcome to TechCon, where innovation meets inspiration!<br>
+           TechCon is an immersive event for tech lovers, experts in the field, and forward-thinkers who are ready to explore the cutting edge of technology innovation.<br>
+           Every year, we host an annual event that is a veritable melting pot of ideas, bringing together professionals, thought leaders, and novices to explore the newest developments, innovations, and trends in the tech industry. <br>
+           Accompany us on an exploration, cooperative, and information-sharing experience as we maneuver through the ever-changing junction between technology and the future.
+        </p>
+        <a href="register.html" class="hero-btn">REGISTER</a>
+    </div>
+</section>
+
+
+<!-- Events section-->
+<section class="events">
+    <h1>Events</h1>
+    <p>Upcoming Events</p>
+
+    <div class="row">
+        <div class="events-col">
+            <h3>Dates</h3>
+            <p>14th - 16th December 2023</p>
+        </div>
+        <div class="events-col">
+            <h3>Venue</h3>
+            <p>Sir Bob Burgess Building</p>
+        </div>
+        <div class="events-col">
+            <h3>Expect Mores</h3>
+            <p>Accompany us on a cooperative experience as we manoeuvre through the ever-changing junction between technology and the future.  </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</section>
+</body>
+</html>

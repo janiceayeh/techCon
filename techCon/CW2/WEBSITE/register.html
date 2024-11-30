@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--makes the website responsive-->
+        <meta name="viewport" content="with=device-width, initial scale=1.0">
+        <title>Tech Con</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="index.html"><img src="logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hidemenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="register.html">REGISTRATION</a></li>
+                        <li><a href="schedule.html">SCHEDULE</a></li>
+                        <li><a href="speaker.html">SPEAKER</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showmenu()"></i>
+            </nav>
+        
+<!-- Creates a container for the registration form -->
+<div class="container">
+    <form id="registrationForm" onsubmit="validateForm(event)">
+        <!-- Form heading and description -->
+        <h2>Register</h2>
+        <p>Please fill in this form to confirm your attendance to TechCon.</p>
+        <hr>
+
+        <!-- fields needed for the form are entered -->
+        <label for="firstName"><b>First Name</b></label>
+        <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" required>
+
+        <label for="lastName"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+        <label for="psw"><b>Create Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+        <!-- Button created to submit the form -->
+        <button type="submit" class="registerbtn">Register</button>
+    </form>
+</div>
+
+<!-- Javascript code for the form validation -->
+<script>
+    function validateForm(event) {
+        event.preventDefault();
+        // Get form inputs
+        var fullName = document.getElementById("fullName").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("psw").value;
+       
+        // email validation
+        var emailRegex = /^\S+@\S+\.\S+$/;
+        if (!emailRegex.test(email)) {
+            alert("Invalid email address");
+            return;
+        }
+       
+        // password validation
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters");
+            return;
+        }
+       
+        // If all validations pass, you can proceed with the form
+        alert("Registration successful!\nName: " + fullName + "\nEmail: " + email);
+    }
+</script>
+
+
+
+        </section>
+
+        <section>
+            <!------JvaScript for Toggle Menu------>
+            <script>
+                var navLinks = document.getElementById("navLinks");
+            
+                function showmenu() {
+                    navLinks.style.right = "0";
+                }
+            
+                function hidemenu() {
+                    navLinks.style.right = "-200px";
+                }
+            </script>
+            
+        </section>
+    </body>
+</html>        

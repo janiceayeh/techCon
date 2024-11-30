@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- makes the website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Con</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="register.html">REGISTRATION</a></li>
+                    <li><a href="schedule.html">SCHEDULE</a></li>
+                    <li><a href="speaker.html">SPEAKER</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+        </nav>
+    </section>
+    <p class="speakerheading">Speakers</p>
+
+        <section class="speakers">
+            
+            <div class="speaker-container">
+                <!-- Speaker 1 -->
+                <div class="speaker">
+                    <img src="john.jpg" alt="Speaker 1">
+                    <h2>Javier Rodriguez</h2>
+                    <p>Topic: "Cybersecurity in the Modern Age"<br>Cybersecurity strategist.<br> Ethical hacker</p>
+                </div>
+    
+                <!-- Speaker 2 -->
+                <div class="speaker">
+                    <img src="mary.jpg" alt="Speaker 2">
+                    <h2>Dr. Aisha Patel</h2>
+                    <p>Topic: "Navigating the Moral Landscape of AI"<br>Ph.D. in Ethical AI from Stanford University.</p>
+                </div>
+
+                <!-- Speaker 3 -->
+                <div class="speaker">
+                    <img src="alexander.jpg" alt="Speaker 3">
+                    <h2>Alexander Doe</h2>
+                    <p>Topic: "Revolutionizing Industries"<br>Quantum computing and artificial intelligence specialist with a Ph.D. in Computer Science from MIT.</p>
+                </div>
+    
+            
+    
+            </div>
+        </section>
+
+        <section>
+            <!------JvaScript for Toggle Menu------>
+            <script>
+                var navlinks = document.getElementById("navLinks")
+    
+                function showMenu(){
+                    navLinks.style.right="0";
+                }
+                function hideMenu(){
+                    navLinks.style.right="-200px";
+                }
+            </script>
+        </section>
+    </body>
+</html>

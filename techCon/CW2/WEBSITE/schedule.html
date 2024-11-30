@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- makes the website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Con</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="register.html">REGISTRATION</a></li>
+                    <li><a href="schedule.html">SCHEDULE</a></li>
+                    <li><a href="speaker.html">SPEAKER</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+        </nav>
+    </section>
+
+    <!-- Schedule -->
+    <section class="schedule">
+        <p class="scheduleheading">Schedule</p>
+
+        <!-- Day Filter -->
+        <div>
+            <label for="dayFilter">Select Day:</label>
+            <select id="dayFilter" onchange="filterByDay()">
+                <option value="all" selected>All Days</option>
+                <option value="day1">Day 1</option>
+                <option value="day2">Day 2</option>
+                <option value="day3">Day 3</option>
+            </select>
+        </div>
+
+        <table>
+            <!-- Day 1 -->
+            <tr class="day1">
+                <th colspan="2">Day 1 - December 14, 2023</th>
+            </tr>
+            <tr class="day1">
+                <td class="time">9:00 AM - 10:30 AM</td>
+                <td class="details">Opening Ceremony</td>
+            </tr>
+            <tr class="day1">
+                <td class="time">11:00 AM - 12:30 PM</td>
+                <td class="details">Keynote Presentations</td>
+            </tr>
+
+            <!-- Day 2 -->
+            <tr class="day2">
+                <th colspan="2">Day 2 - December 15, 2023</th>
+            </tr>
+            <tr class="day2">
+                <td class="time">10:00 AM - 11:30 AM</td>
+                <td class="details">Technical Workshops</td>
+            </tr>
+            <tr class="day2">
+                <td class="time">1:00 PM - 2:30 PM</td>
+                <td class="details">Panel Discussions</td>
+            </tr>
+
+            <!-- Day 3 -->
+            <tr class="day3">
+                <th colspan="2">Day 3 - December 16, 2023</th>
+            </tr>
+            <tr class="day3">
+                <td class="time">9:30 AM - 11:00 AM</td>
+                <td class="details">Innovation Showcase</td>
+            </tr>
+            <tr class="day3">
+                <td class="time">2:00 PM - 3:30 PM</td>
+                <td class="details">Closing Ceremony and Awards</td>
+            </tr>
+        </table>
+    </section>
+
+    <script>
+        function filterByDay() {
+            var selectedDay = document.getElementById('dayFilter').value;
+
+            // Show all rows
+            var rows = document.querySelectorAll('tr[class^="day"]');
+            rows.forEach(function (row) {
+                row.style.display = '';
+            });
+
+            // Hide rows based on the selected day
+            if (selectedDay !== 'all') {
+                var unselectedRows = document.querySelectorAll('tr[class^="day"]:not(.' + selectedDay + ')');
+                unselectedRows.forEach(function (row) {
+                    row.style.display = 'none';
+                });
+            }
+        }
+
+        function showmenu() {
+            var navlinks = document.getElementById("navLinks");
+            navlinks.style.right = "0";
+        }
+
+        function hidemenu() {
+            var navlinks = document.getElementById("navLinks");
+            navlinks.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>
